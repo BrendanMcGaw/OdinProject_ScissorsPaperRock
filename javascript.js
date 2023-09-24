@@ -4,8 +4,8 @@ let rock = 2;
 let playersChoice = null;
 let playerScore = null;
 let computerScore = null;
-let results = document.querySelector('p.results');
 
+// Randomises the computers weapon of choice.
 function getComputersChoice() {
     numericalResult = (Math.floor(Math.random() * 3));
     if (numericalResult == 0) {
@@ -23,6 +23,7 @@ function getComputersChoice() {
     return result;
 }
 
+// Allows the buttons to run a play round function and assigns the button Id to the argument for the players choice.
 document.getElementById("Scissors").addEventListener("click", () => {
     playARound("scissors");
 });
@@ -33,7 +34,7 @@ document.getElementById("Rock").addEventListener("click", () => {
     playARound("rock")
 })
 
-// This function plays a round of the game and determines a victor.
+// This function plays a round of the game and determines the victore.
 function playARound(playersChoice) {
 
     console.log("The final score was:");
