@@ -77,7 +77,7 @@ function playARound(playersChoice) {
     document.getElementById("running-score").innerHTML = 
     "Human: " +  playerScore +
     "<br> Computer: " + computerScore;
-
+    // Win conditional check.
     if (playerScore == 5) {
         alert("The player has won the game! Congratulations");
         return;
