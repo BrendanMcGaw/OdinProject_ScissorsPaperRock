@@ -1,6 +1,7 @@
 let scissors = 0;
 let paper = 1;
 let rock = 2;
+let playersChoice = null;
 let playerScore = null;
 let computerScore = null;
 
@@ -21,14 +22,25 @@ function getComputersChoice() {
     return result;
 }
 
-function getPlayersChoice() {
-    playersChoice = prompt("Please choose scissors, paper or rock.");
-    return playersChoice.toLowerCase()
-}
+document.getElementById("Scissors").addEventListener("click", () => {
+    playARound("scissors");
+});
+document.getElementById("Paper").addEventListener("click", () => {
+    playARound("paper");
+});
+document.getElementById("Rock").addEventListener("click", () => {
+    playARound("rock")
+})
+// document.getElementById("Paper").addEventListener("click", getPlayersChoice());
+// document.getElementById("Rock").addEventListener("click", getPlayersChoice());
+// console.log(getPlayersChoice);
+
+// function getPlayersChoice() {
+//     return playersChoice.toLowerCase()
+// }
 
 // This function plays a round of the game and determines a victor.
-function playARound() {
-    playersChoice = getPlayersChoice();
+function playARound(playersChoice) {
     computersChoice = getComputersChoice();
     console.log(computersChoice);
     console.log(playersChoice);
@@ -63,24 +75,23 @@ function playARound() {
         console.log("This round was a draw. No points awarded.");
     }
 }
+// function game() {
+//     // This is not working as intended, computer score at 5 or above is not stopping the run.
+//     // it would appear that its waiting until both numbers are ABOVE 5 before it stops running
+//     while (playerScore < 5 && computerScore < 5) {
+//         playARound();
+//         console.log(playerScore);
+//         console.log(computerScore);
+//     }
 
-function game() {
-    // This is not working as intended, computer score at 5 or above is not stopping the run.
-    // it would appear that its waiting until both numbers are ABOVE 5 before it stops running
-    while (playerScore < 5 && computerScore < 5) {
-        playARound();
-        console.log(playerScore);
-        console.log(computerScore);
-    }
+//     if (playerScore == 5) {
+//         alert("The player has won the game! Congratulations");
+//     }
 
-    if (playerScore == 5) {
-        alert("The player has won the game! Congratulations");
-    }
-
-    else if (computerScore == 5) {
-        alert("The computer has risen up and stolen victory! Commiserations!");
-    }
-    console.log("The final score was:");
-    console.log(playerScore + " scored by the player.");
-    console.log(computerScore + " scored by the computer.");
-}
+//     else if (computerScore == 5) {
+//         alert("The computer has risen up and stolen victory! Commiserations!");
+//     }
+//     console.log("The final score was:");
+//     console.log(playerScore + " scored by the player.");
+//     console.log(computerScore + " scored by the computer.");
+// }
